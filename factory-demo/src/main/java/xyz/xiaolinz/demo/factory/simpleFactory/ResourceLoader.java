@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.factory.simple;
+package xyz.xiaolinz.demo.factory.simpleFactory;
 /**
  * 资源加载器
  *

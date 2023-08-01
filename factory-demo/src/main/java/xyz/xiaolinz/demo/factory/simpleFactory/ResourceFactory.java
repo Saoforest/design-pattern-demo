@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.factory.simple;
+package xyz.xiaolinz.demo.factory.simpleFactory;
 /**
  * 简单工厂 提供一个创建对象实例的功能，而无需关心其具体实现
  *

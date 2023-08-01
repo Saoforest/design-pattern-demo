@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.factory.simple;
+package xyz.xiaolinz.demo.factory.simpleFactory;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
