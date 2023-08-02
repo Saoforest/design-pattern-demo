@@ -2,8 +2,8 @@ package xyz.xiaolinz.demo.factory.methodFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Properties;
+import xyz.xiaolinz.demo.factory.methodFactory.factory.ClassPathResourceLoaderFactory;
+import xyz.xiaolinz.demo.factory.methodFactory.factory.HttpResourceLoaderFactory;
 import xyz.xiaolinz.demo.factory.methodFactory.factory.ResourceLoaderFactory;
 import xyz.xiaolinz.demo.factory.simpleFactory.Resource;
 import xyz.xiaolinz.demo.factory.simpleFactory.ResourceLoaderException;
@@ -13,33 +13,16 @@ import xyz.xiaolinz.demo.factory.simpleFactory.ResourceLoaderException;
  * @version 1.0.0
  * @date 2023/8/1
  */
-public class ResourceLoader {
+public class ResourceLoaderVersion2 {
 
   //  private ResourceLoaderFactory factory;
 
   private final Map<String, ResourceLoaderFactory> factoryMap = new HashMap<>(10);
 
-  // TODO 符合开闭原则，通过配置文件的方式，可以动态的添加新的资源加载器
+  // TODO 符合开闭原则，通过提前缓存工厂实例从而去除了 if-else 分支判断
   {
-    final var inputStream =
-        Thread.currentThread()
-            .getContextClassLoader()
-            .getResourceAsStream("resouceLoader.properties");
-    final var properties = new Properties();
-    try {
-      properties.load(inputStream);
-
-      for (Entry<Object, Object> entry : properties.entrySet()) {
-        final var key = entry.getKey().toString();
-        final var className = entry.getValue().toString();
-        final Class<?> classz = Class.forName(className);
-        final ResourceLoaderFactory resourceLoaderFactory =
-            (ResourceLoaderFactory) classz.getDeclaredConstructor().newInstance();
-        factoryMap.put(key, resourceLoaderFactory);
-      }
-    } catch (Exception e) {
-      throw new ResourceLoaderException("加载资源配置文件失败", e);
-    }
+    factoryMap.put("classpath", new ClassPathResourceLoaderFactory());
+    factoryMap.put("http", new HttpResourceLoaderFactory());
   }
 
   /**

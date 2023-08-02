@@ -11,6 +11,7 @@
     <modules>
         <module>singleton-demo</module>
         <module>factory-demo</module>
+        <module>builder-demo</module>
     </modules>
 
     <properties>
