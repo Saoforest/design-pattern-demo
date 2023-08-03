@@ -9,16 +9,18 @@ import lombok.Setter;
  * 但是一切脱离实际的设计模式都是耍流氓，所以我们在这里也给出了一个合并后的创建者模式的 demo。 该例子通过构造函数传入参数，然后通过静态内部类创建对象，最后通过 build 方法返回对象。
  * 实现了不可变对象，且防止了并发问题。
  *
+ * <p>不可变对象： 1. 通过 final 修饰类，防止被继承 2. 通过 final 修饰属性，防止被修改 3. 通过私有化构造函数，防止外部创建对象
+ *
  * @author huangmuhong
  * @version 1.0.0
  * @date 2023/8/3
  */
 @Getter
 @Setter
-public class HtmlDocument {
-  private String header = "";
-  private String body = "";
-  private String footer = "";
+public final class HtmlDocument {
+  private final String header;
+  private final String body;
+  private final String footer;
 
   // 私有化构造函数，防止外部创建对象,且只能通过 Builder 创建对象
   // 这样子可以防止并发问题，防止对象创建不完整
