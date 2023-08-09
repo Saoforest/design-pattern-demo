@@ -47,6 +47,7 @@
     <module>builder-demo</module>
     <module>prototype-demo</module>
     <module>proxy-demo</module>
+    <module>decorator-demo</module>
   </modules>
 
   <packaging>pom</packaging>
