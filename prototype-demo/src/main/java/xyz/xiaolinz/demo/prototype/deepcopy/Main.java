@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.prototype.deepcopy.recursive;
+package xyz.xiaolinz.demo.prototype.deepcopy;
 /**
  * @author huangmuhong
  * @date 2023/8/8

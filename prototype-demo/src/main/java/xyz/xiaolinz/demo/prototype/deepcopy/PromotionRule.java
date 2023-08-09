@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.prototype.deepcopy.recursive;
+package xyz.xiaolinz.demo.prototype.deepcopy;
 
 import lombok.Data;
 

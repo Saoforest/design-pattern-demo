@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.prototype.deepcopy.recursive;
+package xyz.xiaolinz.demo.prototype.deepcopy;
 
 import java.util.Date;
 import java.util.List;
