@@ -1,7 +1,10 @@
 package xyz.xiaolinz.demo.bridge.abstractor;
 /**
+ * 司机经理一号
+ *
  * @author huangmuhong
- * @date 2023/8/9
+ * @date 2023/08/10
+ * @see DriverManager
  */
 public class DriverManagerOne extends DriverManager {
 
