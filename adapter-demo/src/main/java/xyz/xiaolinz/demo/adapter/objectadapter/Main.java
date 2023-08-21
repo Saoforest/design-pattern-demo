@@ -7,7 +7,7 @@ package xyz.xiaolinz.demo.adapter.objectadapter;
 public class Main {
   public static void main(String[] args){
     final var adapter = new Adapter();
-    Target target = new ClassAdapter(adapter);
+    Target target = new ObjectAdapter(adapter);
     target.request();
   }
 }

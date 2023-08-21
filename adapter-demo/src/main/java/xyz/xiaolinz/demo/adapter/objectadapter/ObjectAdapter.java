@@ -13,11 +13,11 @@ package xyz.xiaolinz.demo.adapter.objectadapter;
  * @date 2023/08/10
  * @version 1.0.0
  */
-public class ClassAdapter implements Target {
+public class ObjectAdapter implements Target {
 
   protected Adapter adapter;
 
-  public ClassAdapter(Adapter adapter) {
+  public ObjectAdapter(Adapter adapter) {
     this.adapter = adapter;
   }
 
