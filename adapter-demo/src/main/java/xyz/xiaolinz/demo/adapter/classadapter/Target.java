@@ -1,4 +1,7 @@
 package xyz.xiaolinz.demo.adapter.classadapter;
+
+
+
 /**
  * 类适配器模式 - 目标角色 定义了目标角色的行为，这里是request()方法
  *

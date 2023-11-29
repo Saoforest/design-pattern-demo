@@ -1,0 +1,18 @@
+@startuml
+class xyz.xiaolinz.demo.adapter.classadapter.Main {
++ {static} void main(String[])
+}
+class xyz.xiaolinz.demo.adapter.classadapter.ClassAdapter {
++ void request()
+}
+interface xyz.xiaolinz.demo.adapter.classadapter.Target {
+~ void request()
+}
+class xyz.xiaolinz.demo.adapter.classadapter.Adapter {
++ void specificRequest()
+}
+
+
+xyz.xiaolinz.demo.adapter.classadapter.Target <|.. xyz.xiaolinz.demo.adapter.classadapter.ClassAdapter
+xyz.xiaolinz.demo.adapter.classadapter.Adapter <|-- xyz.xiaolinz.demo.adapter.classadapter.ClassAdapter
+@enduml

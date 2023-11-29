@@ -4,10 +4,10 @@ import xyz.xiaolinz.demo.bridge.abstractor.Connection;
 import xyz.xiaolinz.demo.bridge.abstractor.Driver;
 
 /**
- * 桥接设计模式 - 抽象角色
+ * 桥接模式 - 抽象化角色的具体实现 oracle 驱动
  *
  * @author huangmuhong
- * @date 2023/08/11
+ * @date 2023/11/27
  * @version 1.0.0
  * @see Driver
  */

@@ -1,8 +1,12 @@
 package xyz.xiaolinz.demo.builder.demo1;
+
 /**
+ * 指挥者（Director）类 - HtmlDirector
+ *
  * @author huangmuhong
+ * @date 2023/11/23
  * @version 1.0.0
- * @date 2023/8/3
+ *
  */
 public class HtmlDirector {
 

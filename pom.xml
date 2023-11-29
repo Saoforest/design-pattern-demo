@@ -35,7 +35,7 @@
         <groupId>org.springframework.boot</groupId>
         <scope>import</scope>
         <type>pom</type>
-        <version>3.1.2</version>
+        <version>3.1.4</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -50,13 +50,14 @@
     <module>decorator-demo</module>
     <module>bridge-demo</module>
     <module>adapter-demo</module>
+    <module>facade-demo</module>
   </modules>
 
   <packaging>pom</packaging>
 
   <properties>
-    <maven.compiler.source>20</maven.compiler.source>
-    <maven.compiler.target>20</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 

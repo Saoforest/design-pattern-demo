@@ -1,0 +1,36 @@
+@startuml
+class xyz.xiaolinz.demo.proxy.dynamicproxy.cglib.CglibRunner {
++ void run(ApplicationArguments)
+}
+class xyz.xiaolinz.demo.proxy.dynamicproxy.cglib.DataBaseDataQuery {
++ String query(String)
++ String queryAll()
+}
+class xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.DataBaseDataQuery {
++ String query(String)
++ String queryAll()
+}
+class xyz.xiaolinz.demo.proxy.dynamicproxy.cglib.CacheMethodInterceptor {
+- Map<String,String> cache
++ Object intercept(Object,Method,Object[],MethodProxy)
+}
+class xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.CacheInvocationHandler {
+- Map<String,String> cache
+- DataQuery bean
++ Object invoke(Object,Method,Object[])
+}
+interface xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.DataQuery {
+~ String query(String)
+~ String queryAll()
+}
+class xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.JdkProxyRunner {
++ void run(ApplicationArguments)
+}
+
+
+org.springframework.boot.ApplicationRunner <|.. xyz.xiaolinz.demo.proxy.dynamicproxy.cglib.CglibRunner
+xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.DataQuery <|.. xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.DataBaseDataQuery
+org.springframework.cglib.proxy.MethodInterceptor <|.. xyz.xiaolinz.demo.proxy.dynamicproxy.cglib.CacheMethodInterceptor
+java.lang.reflect.InvocationHandler <|.. xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.CacheInvocationHandler
+org.springframework.boot.ApplicationRunner <|.. xyz.xiaolinz.demo.proxy.dynamicproxy.jdk.JdkProxyRunner
+@enduml
