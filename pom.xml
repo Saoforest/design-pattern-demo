@@ -53,6 +53,7 @@
     <module>facade-demo</module>
     <module>combination-demo</module>
     <module>enjoy-demo</module>
+    <module>observer-demo</module>
   </modules>
 
   <packaging>pom</packaging>
