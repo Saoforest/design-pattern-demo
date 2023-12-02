@@ -15,10 +15,10 @@ public interface EventBusInterface {
      * @param subscriber 订户
      * @return {@link EventBusInterface }
      * @author huangmuhong
-     * @date 2023/12/01
+     * @date 2023/12/02
      * @since 1.0.0
      */
-    EventBusInterface register(SubscriberListener<? extends SubscriberObject> subscriber);
+    EventBusInterface register(SubscriberListener<?> subscriber);
 
     /**
      * 发布

@@ -1,7 +1,6 @@
 package xyz.xiaolinz.demo.observer.publish;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+import java.lang.reflect.ParameterizedType;
 import org.springframework.util.LinkedMultiValueMap;
 
 /**
@@ -13,14 +12,26 @@ import org.springframework.util.LinkedMultiValueMap;
  */
 public class EventBus implements EventBusInterface {
 
-    private final LinkedMultiValueMap<Type, SubscriberListener<? extends SubscriberObject>> subscriberListenerMap =
+    private final LinkedMultiValueMap<Class<SubscriberObject>, SubscriberListener<?>> subscriberListenerMap =
         new LinkedMultiValueMap<>();
 
     @Override
-    public EventBus register(SubscriberListener<? extends SubscriberObject> subscriber) {
-        // 获取泛型的类型
-        final var genericType = subscriber.getClass().getGenericInterfaces()[0];
-        subscriberListenerMap.computeIfAbsent(genericType, k -> new ArrayList<>()).add(subscriber);
+    public EventBusInterface register(SubscriberListener<?> subscriber) {
+        // 寻找泛型为 SubscriberObject 的class
+        final var genericInterfaces = subscriber.getClass().getGenericInterfaces();
+        for (var genericInterface : genericInterfaces) {
+            if (genericInterface instanceof Class) {
+                continue;
+            }
+            final var parameterizedType = (ParameterizedType)genericInterface;
+            final var actualTypeArguments = parameterizedType.getActualTypeArguments();
+            for (var actualTypeArgument : actualTypeArguments) {
+                if (actualTypeArgument instanceof Class) {
+                    final var subscriberObjectClass = (Class<SubscriberObject>)actualTypeArgument;
+                    subscriberListenerMap.add(subscriberObjectClass, subscriber);
+                }
+            }
+        }
         return this;
     }
 
@@ -30,6 +41,9 @@ public class EventBus implements EventBusInterface {
         if (subscriberListeners == null) {
             return;
         }
-        subscriberListeners.forEach(subscriberListener -> subscriberListener.onEvent(event));
+        for (var subscriberListener : subscriberListeners) {
+            final var subscriber = (SubscriberListener<SubscriberObject>)subscriberListener;
+            subscriber.onEvent(event);
+        }
     }
 }
