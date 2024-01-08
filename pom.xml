@@ -54,6 +54,7 @@
     <module>combination-demo</module>
     <module>enjoy-demo</module>
     <module>observer-demo</module>
+    <module>template-demo</module>
   </modules>
 
   <packaging>pom</packaging>
