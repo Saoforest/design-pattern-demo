@@ -1,8 +1,12 @@
 package xyz.xiaolinz.demo.template;
 
 /**
+ * 实施模板a
+ *
  * @author huangmuhong
- * @date 2024/1/8
+ * @version 1.0.0
+ * @date 2024/01/08
+ * @see AbstractTemplate
  */
 public class ImplementTemplateA extends AbstractTemplate {
     @Override
