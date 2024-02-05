@@ -55,6 +55,8 @@
     <module>enjoy-demo</module>
     <module>observer-demo</module>
     <module>template-demo</module>
+    <module>strategy-demo</module>
+    <module>chain-demo</module>
   </modules>
 
   <packaging>pom</packaging>
