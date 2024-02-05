@@ -28,8 +28,22 @@ public abstract class AbstractTemplate {
         System.out.println("AbstractTemplate.step3");
     }
 
+    /**
+     * 第2步
+     *
+     * @author huangmuhong
+     * @date 2024/01/25
+     * @since 1.0.0
+     */
     protected abstract void step2();
 
+    /**
+     * 步骤1
+     *
+     * @author huangmuhong
+     * @date 2024/01/25
+     * @since 1.0.0
+     */
     protected abstract void step1();
 
 }
