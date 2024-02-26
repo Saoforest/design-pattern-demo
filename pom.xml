@@ -57,6 +57,7 @@
     <module>template-demo</module>
     <module>strategy-demo</module>
     <module>chain-demo</module>
+    <module>state-demo</module>
   </modules>
 
   <packaging>pom</packaging>
