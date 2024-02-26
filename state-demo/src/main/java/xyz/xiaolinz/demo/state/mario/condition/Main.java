@@ -1,5 +1,7 @@
 package xyz.xiaolinz.demo.state.mario.condition;
 
+import xyz.xiaolinz.demo.state.mario.MarioEvent;
+
 /**
  * @author huangmuhong
  * @date 2024/2/26

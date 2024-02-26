@@ -1,4 +1,4 @@
-package xyz.xiaolinz.demo.state.mario.condition;
+package xyz.xiaolinz.demo.state.mario;
 
 /**
  * @author huangmuhong

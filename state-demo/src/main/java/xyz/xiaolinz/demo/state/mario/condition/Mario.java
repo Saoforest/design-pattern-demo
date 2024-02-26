@@ -1,6 +1,8 @@
 package xyz.xiaolinz.demo.state.mario.condition;
 
 import lombok.Getter;
+import xyz.xiaolinz.demo.state.mario.MarioEvent;
+import xyz.xiaolinz.demo.state.mario.MarioState;
 
 /**
  * 马里奥
