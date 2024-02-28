@@ -1,0 +1,64 @@
+@startuml
+class xyz.xiaolinz.demo.state.mario.state.MarioStateMachine {
+- MarioState currentState
++ void eatMushroom()
++ void eatFireFlower()
++ void enemyAttack()
++ void fallIntoPit()
+}
+
+
+class xyz.xiaolinz.demo.state.mario.state.MarioFireState {
++ {static} MarioFireState INSTANCE
++ void eatMushroom(MarioStateMachine)
++ void eatFireFlower(MarioStateMachine)
++ void enemyAttack(MarioStateMachine)
++ void fallIntoPit(MarioStateMachine)
+}
+
+
+interface xyz.xiaolinz.demo.state.mario.state.MarioState {
+~ void eatMushroom(MarioStateMachine)
+~ void eatFireFlower(MarioStateMachine)
+~ void enemyAttack(MarioStateMachine)
+~ void fallIntoPit(MarioStateMachine)
+}
+
+class xyz.xiaolinz.demo.state.mario.state.MarioSmallState {
++ {static} MarioSmallState INSTANCE
++ void eatMushroom(MarioStateMachine)
++ void eatFireFlower(MarioStateMachine)
++ void enemyAttack(MarioStateMachine)
++ void fallIntoPit(MarioStateMachine)
+}
+
+
+class xyz.xiaolinz.demo.state.mario.state.MarioDeadState {
++ {static} MarioDeadState INSTANCE
++ void eatMushroom(MarioStateMachine)
++ void eatFireFlower(MarioStateMachine)
++ void enemyAttack(MarioStateMachine)
++ void fallIntoPit(MarioStateMachine)
+}
+
+
+class xyz.xiaolinz.demo.state.mario.state.MarioBigState {
++ {static} MarioBigState INSTANCE
++ void eatMushroom(MarioStateMachine)
++ void eatFireFlower(MarioStateMachine)
++ void enemyAttack(MarioStateMachine)
++ void fallIntoPit(MarioStateMachine)
+}
+
+
+class xyz.xiaolinz.demo.state.mario.state.Main {
++ {static} void main(String[])
+}
+
+
+
+xyz.xiaolinz.demo.state.mario.state.MarioState <|.. xyz.xiaolinz.demo.state.mario.state.MarioFireState
+xyz.xiaolinz.demo.state.mario.state.MarioState <|.. xyz.xiaolinz.demo.state.mario.state.MarioSmallState
+xyz.xiaolinz.demo.state.mario.state.MarioState <|.. xyz.xiaolinz.demo.state.mario.state.MarioDeadState
+xyz.xiaolinz.demo.state.mario.state.MarioState <|.. xyz.xiaolinz.demo.state.mario.state.MarioBigState
+@enduml
